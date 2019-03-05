@@ -50,6 +50,10 @@ C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\bi
 C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\obj\Debug\DemoApplication.csprojResolveAssemblyReference.cache
 C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\obj\Debug\DemoApplication.dll
 C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\obj\Debug\DemoApplication.pdb
+C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\bin\RestSharp.dll
+C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\bin\RestSharp.xml
+C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\obj\Debug\DemoApplication.csprojAssemblyReference.cache
+C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\obj\Debug\DemoApplication.csproj.CoreCompileInputs.cache
+C:\Users\Michael\Source\Repos\DemoApplication\DemoApplication\DemoApplication\obj\Debug\DemoApplication.csproj.CopyComplete
