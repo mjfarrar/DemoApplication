@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.no-close .ui-dialog-titlebar-close {
+    display:none;
+}

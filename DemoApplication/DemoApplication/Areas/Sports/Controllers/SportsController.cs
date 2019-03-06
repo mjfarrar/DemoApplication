@@ -15,8 +15,35 @@ namespace DemoApplication.Areas.Sports.Controllers
 
         public ActionResult SportsList() 
         {
+            return View();
+        }
+
+        public ActionResult GetAllSports()
+        {
             SportListModel model = sportHelper.GetSportListModel();
-            return View(model);
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SportTeams(string sportName)
+        {
+            return PartialView("_SportTeams", sportName);
+        }
+
+        public ActionResult GetSportTeams(string sportName)
+        {
+            SportTeamListModel model = sportHelper.GetSportTeamListModel(sportName);
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SportPlayers(string sportName)
+        {
+            return PartialView("_SportPlayers", sportName);
+        }
+
+        public ActionResult GetSportPlayers(string sportName)
+        {
+            SportPlayerListModel model = sportHelper.GetSportPlayerListModel(sportName);
+            return Json(model, JsonRequestBehavior.AllowGet);
         }
     }
 }

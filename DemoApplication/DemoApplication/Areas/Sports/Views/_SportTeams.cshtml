@@ -1,0 +1,55 @@
+﻿@model string
+
+<div id="sportTeamsDiv" title="@Model">
+    <div class="row">
+        <div class="col col-md-12">
+            <table id="sportTeams" class="table table-striped table-bordered table-hover responsive" data-sport="@Model" style="width: 100%;"></table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#sportTeamsDiv').dialog({
+            modal: true,
+            resizable: false,
+            width: '40%',
+            dialogClass: 'no-close',
+            open: function (event, ui) {
+                $('#sportTeamsDiv').css('overflow', 'hidden');
+            },
+            buttons: [
+                {
+                    text: "Close",
+                    click: function () {
+                        $('#sportTeamsDiv').remove();
+                    }
+                }
+            ]
+        });
+
+        var sportsTeamsTable = $('#sportTeams').DataTable({
+            ajax: {
+                url: '/Sports/GetSportTeams?sportName='+$('#sportTeams').data('sport'),
+                method: "GET",
+                dataSrc: "TeamList"
+            },
+            columns: [
+                {
+                    title: 'Team', data: "TeamName", createdCell: function (td, cellData, rowData, row, col) {
+                        $(td).on('click', function () {
+                            alert(cellData);
+                        });
+                    }
+                },
+                {
+                    title: '# Players', data: "NumberOfTeamPlayers", createdCell: function (td, cellData, rowData, row, col) {
+                        $(td).on('click', function () {
+                            alert(rowData.SportName);
+                        });
+                    }
+                }
+            ]
+        });
+    });
+</script>
