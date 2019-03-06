@@ -26,3 +26,8 @@ textarea {
 .no-close .ui-dialog-titlebar-close {
     display:none;
 }
+
+.td-select {
+    color: blue;
+    text-decoration: underline;
+}

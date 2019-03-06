@@ -16,10 +16,10 @@
     <div></div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <ul class="nav navbar-nav" style="font-style: italic;">
-            <li><h2 style="color: white; padding-left: 10px;">Sports Admin</h2></li>
+            <li style="padding-left: 10px;"><h2 style="color: white;"><a style="text-decoration: none; color: white !important;" href="/Home/Index">Sports Admin</a></h2></li>
             <li style="padding-top: 10px;">@Html.ActionLink("Sports", "SportsList", "Sports")</li>
-            <li style="padding-top: 10px;">@Html.ActionLink("Teams", "About", "Home")</li>
-            <li style="padding-top: 10px;">@Html.ActionLink("Players", "Contact", "Home")</li>
+            <li style="padding-top: 10px;">@Html.ActionLink("Teams", "TeamsList", "Teams")</li>
+            @*<li style="padding-top: 10px;">@Html.ActionLink("Players", "Contact", "Home")</li>*@
         </ul>
     </div>
     <div class="container body-content" id="body">

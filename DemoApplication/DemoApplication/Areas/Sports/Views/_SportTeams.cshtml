@@ -38,14 +38,12 @@
                 {
                     title: 'Team', data: "TeamName", createdCell: function (td, cellData, rowData, row, col) {
                         $(td).on('click', function () {
-                            alert(cellData);
                         });
                     }
                 },
                 {
                     title: '# Players', data: "NumberOfTeamPlayers", createdCell: function (td, cellData, rowData, row, col) {
                         $(td).on('click', function () {
-                            alert(rowData.SportName);
                         });
                     }
                 }

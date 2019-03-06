@@ -163,6 +163,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Shared\Helpers\BaseHelper.cs" />
     <Compile Include="Areas\Shared\Models\PlayerInfo.cs" />
     <Compile Include="Areas\Shared\Models\SportInfo.cs" />
     <Compile Include="Areas\Shared\Models\TeamInfo.cs" />
@@ -174,6 +175,13 @@
     <Compile Include="Areas\Sports\Models\SportPlayerModel.cs" />
     <Compile Include="Areas\Sports\Models\SportTeamListModel.cs" />
     <Compile Include="Areas\Sports\Models\SportTeamModel.cs" />
+    <Compile Include="Areas\Teams\Controllers\TeamsController.cs" />
+    <Compile Include="Areas\Teams\Helpers\TeamsHelper.cs" />
+    <Compile Include="Areas\Teams\Models\AddNewTeamModel.cs" />
+    <Compile Include="Areas\Teams\Models\TeamListModel.cs" />
+    <Compile Include="Areas\Teams\Models\TeamModel.cs" />
+    <Compile Include="Areas\Teams\Models\TeamPlayerListModel.cs" />
+    <Compile Include="Areas\Teams\Models\TeamPlayerModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -245,6 +253,9 @@
     <Content Include="Scripts\datatables.js" />
     <Content Include="Scripts\datatables.min.js" />
     <Content Include="Areas\Sports\Views\_SportPlayers.cshtml" />
+    <Content Include="Areas\Teams\Views\TeamsList.cshtml" />
+    <Content Include="Areas\Teams\Views\_TeamPlayers.cshtml" />
+    <Content Include="Areas\Teams\Views\_AddNewTeam.cshtml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />

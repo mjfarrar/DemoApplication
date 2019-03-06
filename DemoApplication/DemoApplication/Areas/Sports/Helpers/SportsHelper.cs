@@ -9,65 +9,12 @@ using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using RestSharp;
 using DemoApplication.Areas.Shared.Models;
+using DemoApplication.Areas.Shared;
 
 namespace DemoApplication.Areas.Sports.Helpers
 {
-    public class SportsHelper
+    public class SportsHelper : BaseHelper
     {
-        string sportsAPI = ConfigurationManager.AppSettings["SportsAPIURL"] + "api/sports";
-
-        //public IEnumerable<SportModel> GetAllSports() 
-        //{
-        //    IEnumerable<SportModel> sports = null;
-
-        //    using (var client = new HttpClient())
-        //    {
-        //        HttpResponseMessage response = client.GetAsync(sportsAPI + "GetAllSports").Result;
-
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            string data = response.Content.ReadAsStringAsync().Result;
-        //            JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
-        //            sports = jsSerializer.Deserialize<List<SportModel>>(data);
-        //        }
-        //    }
-
-        //    return sports;
-        //}
-
-        public IEnumerable<SportInfo> GetAllSports()
-        {
-            var client = new RestClient(sportsAPI);
-            var request = new RestRequest("GetAllSports", Method.GET);
-
-            var response = client.Execute(request);
-
-            IEnumerable<SportInfo> sports = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<SportInfo>>(response.Content);
-            return sports;
-        }
-
-        public IEnumerable<TeamInfo> GetAllTeams()
-        {
-            var client = new RestClient(sportsAPI);
-            var request = new RestRequest("GetAllTeams", Method.GET);
-
-            var response = client.Execute(request);
-
-            IEnumerable<TeamInfo> teams = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<TeamInfo>>(response.Content);
-            return teams;
-        }
-
-        public IEnumerable<PlayerInfo> GetAllPlayers()
-        {
-            var client = new RestClient(sportsAPI);
-            var request = new RestRequest("GetAllPlayers", Method.GET);
-
-            var response = client.Execute(request);
-
-            IEnumerable<PlayerInfo> players = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<PlayerInfo>>(response.Content);
-            return players;
-        }
-
         public SportListModel GetSportListModel() 
         {
             IEnumerable<SportInfo> sports = GetAllSports();

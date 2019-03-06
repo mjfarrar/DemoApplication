@@ -1,0 +1,55 @@
+﻿@model DemoApplication.Areas.Teams.Models.AddNewTeamModel
+
+<div id="teamPlayersDiv" title="Add New Team">
+    <div class="row">
+        <div class="col col-md-6">
+            <input type="text" id="teamName"/>
+        </div>
+        <div class="col col-md-6">
+            <select id="sportName">
+                @foreach (var sport in Model.Sports)
+                {
+                    <option value="@sport.Value">@sport.Text</option>
+                }
+            </select>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#teamPlayersDiv').dialog({
+            modal: true,
+            resizable: false,
+            width: '40%',
+            dialogClass: 'no-close',
+            open: function (event, ui) {
+                $('#teamPlayersDiv').css('overflow', 'hidden');
+            },
+            buttons: [
+                {
+                    text: "Close",
+                    click: function () {
+                        $('#teamPlayersDiv').remove();
+                    }
+                },{
+                    text: "Save Team",
+                    click: function () {
+                        $.ajax({
+                            url: '/Teams/SaveNewTeam?teamName=' + $('#teamName').val() + '&sportName=' + $('#sportName').val(),
+                            method: "GET",
+                            cache: false,
+                            success: function (data) {
+                                if (data)
+                                {
+                                    $('#teamPlayersDiv').remove();
+                                    teamsTable.ajax.reload();
+                                }
+                            }
+                        });
+                    }
+                }
+            ]
+        });
+    });
+</script>

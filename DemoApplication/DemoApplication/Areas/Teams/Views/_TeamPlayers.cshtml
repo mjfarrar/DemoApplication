@@ -1,0 +1,43 @@
+﻿@model string
+
+<div id="teamPlayersDiv" title="@Model">
+    <div class="row">
+        <div class="col col-md-12">
+            <table id="teamPlayers" class="table table-striped table-bordered table-hover responsive" data-team="@Model" style="width: 100%;"></table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#teamPlayersDiv').dialog({
+            modal: true,
+            resizable: false,
+            width: '40%',
+            dialogClass: 'no-close',
+            open: function (event, ui) {
+                $('#teamPlayersDiv').css('overflow', 'hidden');
+            },
+            buttons: [
+                {
+                    text: "Close",
+                    click: function () {
+                        $('#teamPlayersDiv').remove();
+                    }
+                }
+            ]
+        });
+
+        var sportsTeamsTable = $('#teamPlayers').DataTable({
+            ajax: {
+                url: '/Teams/GetTeamPlayers?teamName='+$('#teamPlayers').data('team'),
+                method: "GET",
+                dataSrc: "PlayerList"
+            },
+            columns: [
+                {title: 'Player', data: "PlayerName"},
+                {title: 'Position', data: "PlayerPosition"}
+            ]
+        });
+    });
+</script>

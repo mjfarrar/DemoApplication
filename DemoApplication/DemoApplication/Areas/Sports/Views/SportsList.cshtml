@@ -18,6 +18,9 @@
             },
             {
                 title: '# Teams', data: "NumberOfTeams", createdCell: function (td, cellData, rowData, row, col) {
+                    if (rowData.NumberOfTeams >= 0) {
+                        $(td).addClass('td-select');
+                    }
                     $(td).on('click', function () {
                         $.ajax({
                             url: '/Sports/SportTeams?sportName=' + rowData.SportName,
@@ -32,6 +35,9 @@
             },
             {
                 title: '# Players', data: "NumberOfPlayers", createdCell: function (td, cellData, rowData, row, col) {
+                    if (rowData.NumberOfPlayers >= 0) {
+                        $(td).addClass('td-select');
+                    }
                     $(td).on('click', function () {
                         $.ajax({
                             url: '/Sports/SportPlayers?sportName=' + rowData.SportName,
